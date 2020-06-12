@@ -1,0 +1,48 @@
+scalar Date
+
+type Query {
+  findModuleByType(type: String!): Block
+}
+
+
+type Block {
+ 
+  id: Int
+  label: String
+
+  name: String
+
+  parent_type: Int
+
+  type: String
+
+  event_type: Int
+
+  event_url: String
+
+  transform_rule: String
+
+  attribute: String
+
+  description: String
+
+  show_label: String
+
+  config_label: String
+
+  client_type: Int
+
+  is_default: String
+
+  remark: String
+
+  creator: String
+
+  modifier: String
+
+  gmt_created: Date
+
+  gmt_modified: Date
+
+  is_deleted: String
+}

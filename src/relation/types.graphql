@@ -1,0 +1,22 @@
+scalar Date
+
+type Query {
+  findByModuleId(moduleId: Int!): [Relation]
+}
+
+
+type Relation {
+  id: Int
+  metadata_module_id: Int
+  component_id: Int
+  component_parent_id: Int
+  component_order: Int
+  origin_attribute: String
+  is_default: String
+  creator: String
+  modifier: String
+  gmt_created: Date
+  gmt_modified: Date
+  is_deleted: String
+
+}

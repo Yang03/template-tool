@@ -1,0 +1,73 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Component {
+  id: Float!
+  label: String!
+  name: String!
+  type: String!
+  attribute: String!
+  origin_attribute: String!
+  event_type: Float!
+  event_url: String!
+  transform_rule: String!
+  business_type: Float!
+  client_type: Float!
+  not_img: String!
+  creator: String!
+  modifier: String!
+  gmt_created: DateTime!
+  gmt_modified: DateTime!
+  is_deleted: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Relation {
+  id: Float!
+  metadata_module_id: Float!
+  component_id: Float!
+  component_parent_id: Float!
+  component_order: Float!
+  is_default: String!
+  creator: String!
+  modifier: String!
+  gmt_created: DateTime!
+  gmt_modified: DateTime!
+  is_deleted: String!
+  component: Component!
+}
+
+type Block {
+  id: Float!
+  label: String!
+  name: String!
+  parent_type: Float!
+  type: String!
+  event_type: Float!
+  event_url: String!
+  transform_rule: String!
+  attribute: String!
+  description: String!
+  show_label: String!
+  config_label: String!
+  client_type: Float!
+  is_default: String!
+  remark: String!
+  creator: String!
+  modifier: String!
+  gmt_created: DateTime!
+  gmt_modified: DateTime!
+  is_deleted: String!
+  module: [Relation!]!
+}
+
+type Query {
+  findComponent: [Component!]!
+  findByModuleId(moduleId: Float!): [Relation!]!
+  findModuleByType(type: String!): Block!
+}
